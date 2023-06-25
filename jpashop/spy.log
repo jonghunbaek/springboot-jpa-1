@@ -1,0 +1,10 @@
+1687683402979|16|statement|connection 1|url jdbc:oracle:thin:@localhost:1521:xe|     drop table member cascade constraints|     drop table member cascade constraints
+1687683402985|5|statement|connection 1|url jdbc:oracle:thin:@localhost:1521:xe|     drop sequence hibernate_sequence|     drop sequence hibernate_sequence
+1687683402990|2|statement|connection 2|url jdbc:oracle:thin:@localhost:1521:xe|create sequence hibernate_sequence start with 1 increment by  1|create sequence hibernate_sequence start with 1 increment by  1
+1687683402999|8|statement|connection 2|url jdbc:oracle:thin:@localhost:1521:xe|     create table member (        id number(19,0) not null,         username varchar2(255 char),         primary key (id)     )|     create table member (        id number(19,0) not null,         username varchar2(255 char),         primary key (id)     )
+1687683454811|13|statement|connection 1|url jdbc:oracle:thin:@localhost:1521:xe|     drop table member cascade constraints|     drop table member cascade constraints
+1687683454815|3|statement|connection 1|url jdbc:oracle:thin:@localhost:1521:xe|     drop sequence hibernate_sequence|     drop sequence hibernate_sequence
+1687683454820|1|statement|connection 2|url jdbc:oracle:thin:@localhost:1521:xe|create sequence hibernate_sequence start with 1 increment by  1|create sequence hibernate_sequence start with 1 increment by  1
+1687683454828|7|statement|connection 2|url jdbc:oracle:thin:@localhost:1521:xe|     create table member (        id number(19,0) not null,         username varchar2(255 char),         primary key (id)     )|     create table member (        id number(19,0) not null,         username varchar2(255 char),         primary key (id)     )
+1687683456468|9|statement|connection 3|url jdbc:oracle:thin:@localhost:1521:xe|select hibernate_sequence.nextval from dual|select hibernate_sequence.nextval from dual
+1687683456562|0|rollback|connection 3|url jdbc:oracle:thin:@localhost:1521:xe||

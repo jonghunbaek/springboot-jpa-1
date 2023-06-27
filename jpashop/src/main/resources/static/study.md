@@ -8,6 +8,20 @@
 + 상속관계 매핑 3가지 방법(1. 싱글테이블 전략, 2, joined(정교), tableperclass(클래스별 테이블 생성)) - 부모클래스에 @Inheritance, @DiscriminatorColumn, @DiscriminatorValue
 + 양방향관계에선 연관관계 주인을 정해줘야한다.
 + enum 타입엔 @Enumerated 어노테이션을 붙여주고 EnumType.STRING으로 ORDINAL은 숫자로 매기기 때문에 중간에 값이 추가될 경우 문제가 발생
++ 엔티티에는 setter사용을 지양하고 역할이 명확한 메서드를 생성해서 사용하자
++ 모든 연관관계는 지연로딩으로 설정(즉시로딩은 예측이 어렵고, 어떤 쿼리가 실행될지 트레이싱이 어렵다. 연관된 엔티티를 함께 조회해야하는 경우 fetch join 또는 엔티티 그래프 기능을 사용
++ xToOne관계는 기본이 즉시로딩이라 설정을 바꿔줘야 함
++ 컬렉션은 필드에서 바로 초기화하는 것이 안전, null에 안전, 하이버네이트가 컬렉션을 한번 감싸기 때문에 절대 컬렉션에 대한 수정은 금지
++ cascade = CascadeType.ALL - 영속화 전파
++ 연관관계 메서드를 사용하자 - 양방향 연관관계인 경우, 아래와 같은 식으로 하나의 메서드에서 값을 처리 
+	public void setDelivery(Delivery delivery) {
+		this.delivery = delivery;
+		delivery.setOrder(this);
+	}
+	
+### 3. 애플리케이션 구현
++ jpql과 sql의 차이(jpql은 엔티티 객체 대상, sql은 테이블 대상으로)
 
 ### Tip
 + 테케에 @Transactional이 있으면 테케 종료 후 데이터를 롤백한다.
++ 실무에선 다대다(@ManyToMany)절대로 쓰지 말것 - 운영이 어렵고 컬럼 추가가 안됨

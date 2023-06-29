@@ -25,6 +25,7 @@
 + @Transactional(readOnly = true) - 읽기 전용은 성능을 높여줌
 + @Transactional은 기본적으로 롤백이 기본임(테케에서만)
 + 예외처리에 대한 테스트케이스 작성법 숙지
++ 생성 메서드
 
 ### Tip
 + 테케에 @Transactional이 있으면 테케 종료 후 데이터를 롤백한다.
